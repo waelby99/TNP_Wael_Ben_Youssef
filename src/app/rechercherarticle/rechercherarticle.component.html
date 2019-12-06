@@ -1,0 +1,45 @@
+<div><h1 style="text-align: center;">Trouver Votre Choix</h1></div>
+<div class="bg">
+<!-- Page Content -->
+<div class="container">
+  <div class=" bg card border-10 shadow my-9">
+    <div class="card-body p-5">
+      <div class="container-fluid " >
+        <div class="row">
+          <div>
+            <form>
+            <div class="form-group">
+            <label style="font-weight: bold;">
+              Tapez l'identifiant du votre produit :
+            </label>
+            <input class="form-control" type="number" id="p" name="identifiant"  #price [(ngModel)]="p"/><br>
+          </div>
+          
+        </form>
+        <ng-container *ngFor="let t of v;let i=index">
+        <div *ngIf="p==v[i].id">
+            <div>
+              <div class="container">
+                  <div class="card" style="width:305px">
+                    <img class="card-img-top" [src]="v[i].imag" style="width:100%" >
+                    <div class="card-body">
+                      <h4 class="card-title"> {{v[i].libel}}</h4>
+                      <p class="card-text">Le id:{{v[i].id}}</p>
+                      <p class="card-text">le prix:{{v[i].prix}} DT</p>
+                      <p class="card-text">Disponibilité :{{v[i].booleen}}</p>
+                      <p class="card-text">Date de remise en vente :{{v[i].dat |date:'dd/MM/yyyy'}}</p>
+                      <a href="#" class="btn btn-dark">Commander</a>
+                    </div>
+                  </div>
+                  </div>
+            
+        </div>
+        </div>
+      </ng-container>
+        </div>
+        
+        </div>
+      </div>
+  </div>
+</div>
+</div>

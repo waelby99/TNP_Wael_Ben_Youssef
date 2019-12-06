@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="row">
+<ng-container *ngFor="let t of a;let i=index">
+  
+    <div class="col-sm-4">
+    <ul style="width:350px" class="list-group">
+        <div class="card" style="width:350px">
+            <img class="card-img-top" [src]="t.imag" style="width:100%">
+            <div class="card-body">
+              <h4 class="card-title"> {{t.libel}}</h4>
+              <p class="card-text">Prix : {{t.prix}} DT</p>
+              <a class="btn btn-dark" [routerLink]="['/aie',t.id,t.libel,t.imag,t.dat|date:'fullDate',t.prix,t.booleen]">Détails</a><br><br>
+              <button class="btn btn-dark" (click)="ondelete(i)">Delete</button>
+            </div>
+          </div>
+    </ul>
+  </div>
+</ng-container>
+  </div>
+
+
+</div>

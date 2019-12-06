@@ -1,0 +1,66 @@
+
+<div class="bg">
+    
+    <!-- Page Content -->
+    <div class="container">
+      <div class=" bg card border-0 shadow my-9">
+        <div class="card-body p-5">
+         <div class="container">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <div class="form-group">
+                    <label for="id">
+                        Id:
+                    </label>
+                    <input type="number" id="id" name="id" [(ngModel)]="id" class="form-control" required #identif>
+                </div>
+                <div *ngIf="identif.invalid && identif.dirty" class="alert alert-danger">
+                    L'identifiant doit etre un nombre
+                </div>
+                <div class="form-group">
+                    <label for="libelle">
+                        Libelle:
+                    </label>
+                    <input type="text" id="libelle" name="lib" [(ngModel)]="libel" class="form-control" required pattern="[A-Z][a-zA-Z]+" #lib="ngModel" >
+                </div>
+                
+                <div class="form-group">
+                    <label for="img">
+                        Image:
+                    </label>
+                    <input type="text" id="imag" name="i" [(ngModel)]="imag" class="form-control" pattern="../[a-zA-Z]+" required #i="ngModel">
+
+                </div>
+                <div class="form-group">
+                    <label for="prix">
+                        Prix:
+                    </label>
+                    <input type="number" id="prix" name="p" [(ngModel)]="prix" class="form-control" required  #p="ngModel">
+
+                </div>
+                
+                    <div class="form-group">
+                        <label for="dat">
+                            Date:
+                        </label>
+                        <input type="string" id="dat" name="p" [(ngModel)]="dat" class="form-control" required  #p="ngModel">
+    
+                    </div>
+                    
+                    <div class="form-group">
+                            <label for="bool">
+                                Valabilité:<br>
+                                True : <input type="radio" id="bool" name="b" [(ngModel)]="booleen" class="form-control" value="true" required  #b1="ngModel">
+                                False : <input type="radio" id="bool" name="b" [(ngModel)]="booleen" class="form-control" value="false" required  #b="ngModel">
+                            </label>
+                            
+
+                        </div>
+                            
+                                <button type="submit" class="btn btn-dark text-white">Enregistrer</button>
+      
+            </form>
+         </div>         
+        </div>
+      </div>
+    </div>
+    </div>
